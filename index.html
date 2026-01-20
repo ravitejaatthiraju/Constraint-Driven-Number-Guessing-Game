@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Number Guess</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game-card">
+    <header>
+        <div class="timer-text">TIME LEFT: <span id="time-val">60</span>s</div>
+        <div class="timer-bar"><div class="timer-fill" id="timer-bar"></div></div>
+        <h1>Logic Guess</h1>
+    </header>
+
+    <div class="dashboard">
+        <div class="dash-item">
+            <strong id="range-val">1 - 100</strong>
+            <span>Current Range</span>
+        </div>
+        <div class="dash-item">
+            <strong id="attempts-val">7</strong>
+            <span>Attempts Left</span>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <input type="number" id="guess-input" placeholder="?" autocomplete="off">
+    </div>
+
+    <button class="btn-main" id="guess-btn">GUESS NUMBER</button>
+    <button class="btn-main play-again-btn hidden" id="restart-btn">PLAY AGAIN</button>
+
+    <div class="feedback" id="feedback-area">
+        <div class="feedback-title" id="fb-title">Start Game</div>
+        <div class="feedback-desc" id="fb-desc">Enter a number to begin</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

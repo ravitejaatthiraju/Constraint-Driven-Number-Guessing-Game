@@ -1,0 +1,250 @@
+:root {
+    --primary: #6366f1;
+    /* Indigo */
+    --primary-dark: #4f46e5;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-sub: #64748b;
+
+    /* Status Colors */
+    --hot: #ef4444;
+    /* Red */
+    --warm: #f59e0b;
+    /* Amber */
+    --cold: #3b82f6;
+    /* Blue */
+    --success: #10b981;
+    /* Green */
+    --neutral: #e2e8f0;
+
+    --radius: 16px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.game-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 420px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header & Timer */
+header {
+    margin-bottom: 1.5rem;
+}
+
+.timer-bar {
+    height: 6px;
+    background: var(--neutral);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+    position: relative;
+}
+
+.timer-fill {
+    height: 100%;
+    background: var(--primary);
+    width: 100%;
+    transition: width 1s linear;
+}
+
+.timer-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-sub);
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Dashboard: Range & Attempts */
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    background: #f1f5f9;
+    padding: 0.8rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.dash-item strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--text-main);
+}
+
+.dash-item span {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Game Input Area */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 3px solid var(--neutral);
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color 0.2s;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus {
+    border-color: var(--primary);
+}
+
+input:disabled {
+    background: #f1f5f9;
+    color: #cbd5e1;
+    border-color: transparent;
+}
+
+.btn-main {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.btn-main:hover {
+    background: var(--primary-dark);
+}
+
+.btn-main:active {
+    transform: scale(0.98);
+}
+
+.btn-main.hidden {
+    display: none;
+}
+
+/* Feedback Area */
+.feedback {
+    min-height: 80px;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 0.2rem;
+}
+
+.feedback-desc {
+    color: var(--text-sub);
+    font-size: 0.95rem;
+}
+
+.hot {
+    color: var(--hot);
+}
+
+.warm {
+    color: var(--warm);
+}
+
+.cold {
+    color: var(--cold);
+}
+
+.win {
+    color: var(--success);
+}
+
+/* End Screen Overlay (Optional approach, sticking to inline for simplicity) */
+.play-again-btn {
+    background: var(--text-main);
+    margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.animate-shake {
+    animation: shake 0.3s ease-in-out;
+}

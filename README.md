@@ -73,10 +73,10 @@ The result is a simple but engaging logic game that rewards smart thinking.
 ## 📂 Project Structure
 
 number-guessing-logic-game/
-│── index.html # Game UI structure
-│── style.css # Styling and responsiveness
-│── script.js # Game logic
-└── README.md # Project documentation
+│── index.html    # Game UI structure
+│── style.css     # Styling and responsiveness
+│── script.js     # Game logic
+└── README.md     # Project documentation
 
 ---
 
